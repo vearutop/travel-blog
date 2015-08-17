@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "defbc2f2e1a5e4aa377f5343b218583f",
+    "hash": "48620386b1fff427484592a76dc404a4",
     "packages": [
         {
             "name": "php-yaoi/php-yaoi",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-yaoi/php-yaoi.git",
-                "reference": "f45734d1cab2e10f076a6f9df1b717e754832df3"
+                "reference": "ba28b9fc500964d77e513c36e9672f6d424ba621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-yaoi/php-yaoi/zipball/f45734d1cab2e10f076a6f9df1b717e754832df3",
-                "reference": "f45734d1cab2e10f076a6f9df1b717e754832df3",
+                "url": "https://api.github.com/repos/php-yaoi/php-yaoi/zipball/ba28b9fc500964d77e513c36e9672f6d424ba621",
+                "reference": "ba28b9fc500964d77e513c36e9672f6d424ba621",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-08-17 13:52:57"
+            "time": "2015-08-17 20:33:44"
         }
     ],
     "packages-dev": [],

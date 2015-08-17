@@ -7,13 +7,16 @@ use Yaoi\BaseClass;
 
 class Router extends BaseClass
 {
+    public function __construct(Request $request) {
+        $this->request = $request;
+    }
+
+    /** @var Request  */
     protected $request;
     protected $baseUrl;
 
-    public function route(Request $request) {
-        $this->request = $request;
-        $path = new String($request->path());
-        $sPath = new String($path);
+    public function route() {
+        $path = new String($this->request->path());
 
         switch (true) {
             case $path->starts('/?') || '/' === $path->value:
