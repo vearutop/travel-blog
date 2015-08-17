@@ -1,0 +1,11 @@
+{
+    "require": {
+        "php-yaoi/php-yaoi": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "TravelBlog\\": "src/"
+        }
+    }
+
+}
