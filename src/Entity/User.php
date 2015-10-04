@@ -12,16 +12,20 @@ class User extends Entity
     public $firstName;
     public $lastName;
     public $avatar;
+    public $urlName;
 
     static function setUpColumns($columns)
     {
         $columns->id = Column::AUTO_ID;
         $columns->firstName = Column::STRING;
         $columns->lastName = Column::STRING;
+        $columns->urlName = Column::STRING;
         $columns->avatar = Column::STRING;
     }
 
-    static function setUpTable(Table $table)
+    static function setUpTable(\Yaoi\Database\Definition\Table $table, $columns)
     {
+        // TODO: Implement setUpTable() method.
     }
+
 }

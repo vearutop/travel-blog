@@ -14,7 +14,6 @@ use Yaoi\BaseClass;
 class Request extends BaseClass
 {
     public $baseUrl;
-    public $path;
     protected $get;
     public $post;
     public $request;
@@ -68,7 +67,7 @@ class Request extends BaseClass
     }
 
     public function hostname() {
-        if ($this->isCli()) {
+        if ($this->isCli) {
             return $this->argv(2);
         }
         else {
@@ -77,7 +76,7 @@ class Request extends BaseClass
     }
 
     public function path() {
-        if ($this->isCli()) {
+        if ($this->isCli) {
             return $this->argv(1);
         }
         else {
@@ -85,11 +84,7 @@ class Request extends BaseClass
         }
     }
 
-    public function isCli() {
-        return PHP_SAPI === 'cli';
-    }
-
-
+    public $isCli;
 
     public static function createAuto() {
         $request = new static();
@@ -99,9 +94,7 @@ class Request extends BaseClass
         $request->request = $_REQUEST;
         $request->cookie = $_COOKIE;
         $request->server = Server::fromArray($_SERVER);
-        if ($request->isCli()) {
-            $request->argv = $_SERVER['argv'];
-        }
+        $request->isCli = PHP_SAPI === 'cli';
         return $request;
     }
 }

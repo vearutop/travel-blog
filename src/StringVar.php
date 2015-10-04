@@ -4,7 +4,7 @@ namespace TravelBlog;
 
 use Yaoi\BaseClass;
 
-class String extends BaseClass
+class StringVar extends BaseClass
 {
     public $value = '';
     public function __construct($string) {

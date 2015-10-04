@@ -3,6 +3,7 @@
 namespace TravelBlog;
 
 use TravelBlog\Ui\IndexController;
+use TravelBlog\Ui\LoginController;
 use Yaoi\BaseClass;
 
 class Router extends BaseClass
@@ -16,11 +17,15 @@ class Router extends BaseClass
     protected $baseUrl;
 
     public function route() {
-        $path = new String($this->request->path());
+        $path = new StringVar($this->request->path());
 
         switch (true) {
             case $path->starts('/?') || '/' === $path->value:
                 IndexController::IndexAction();
+                break;
+
+            case $path->starts('/auth/vk'):
+                LoginController::create($this->request)->oauthEndPoint();
                 break;
 
             default:
@@ -39,7 +44,5 @@ class Router extends BaseClass
             exit(); // todo proper stop
         }
     }
-
-
 
 }
