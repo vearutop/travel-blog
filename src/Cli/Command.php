@@ -11,5 +11,6 @@ abstract class Command
     abstract public function describeSwitches($options);
     abstract public function describeCommand();
     abstract public function execute();
+    abstract public function getName();
 
 }
