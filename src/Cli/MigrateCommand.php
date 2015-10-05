@@ -13,15 +13,19 @@ use Yaoi\Migration\Manager;
 
 class MigrateCommand extends Command
 {
+    public $dryRun;
+    public $verbose;
+    public $continueAfterFail;
+
     /**
      * @param static|\stdClass $options
      * @return void
      */
     public function describeSwitches($options)
     {
-        $options->action = Argument::create();
-
-        $options->force = 'Force migrations';
+        $options->dryRun = Option::create()->setDescription('Read-only mode to check current status');
+        $options->continueAfterFail = Option::create()->setDescription('Do not stop migrations after failure');
+        $options->verbose = Option::create()->setDescription('More output')->setEnum(0, 1, 2);
     }
 
     public function describeCommand()

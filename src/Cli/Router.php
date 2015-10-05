@@ -10,8 +10,8 @@ class Router extends \TravelBlog\Router
 
     public function route() {
         $this->commands = array(
-            'migrate' => new MigrateCommand(),
-            'setup' => new SetupCommand(),
+            new MigrateCommand(),
+            new SetupCommand(),
         );
 
         $commandName = $this->request->path();
