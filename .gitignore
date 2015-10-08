@@ -1,3 +1,4 @@
 env/conf.php
 .idea
 vendor
+public/nginx-error.log

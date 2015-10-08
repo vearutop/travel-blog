@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vearutop
- * Date: 17.08.2015
- * Time: 21:29
- */
 
 namespace TravelBlog\Request;
 

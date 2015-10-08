@@ -6,6 +6,7 @@ use TravelBlog\Request;
 
 class Router extends \TravelBlog\Router
 {
+    /** @var  Command[] */
     protected $commands;
 
     public function route() {
@@ -25,6 +26,9 @@ class Router extends \TravelBlog\Router
 ?>
 Usage:
 <?php
+        foreach ($this->commands as $command) {
+
+        }
     }
 
 }
