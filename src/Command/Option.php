@@ -6,7 +6,7 @@
  * Time: 3:03
  */
 
-namespace TravelBlog\Cli;
+namespace TravelBlog\Command;
 
 use Yaoi\BaseClass;
 
@@ -18,6 +18,14 @@ class Option extends BaseClass
     const TYPE_PROMPT = 'prompt';
 
     public $values = array();
+
+    public $isArgument;
+    public $isVariableLength;
+    public function setIsArgument($isArgument = true, $isVariableLength = false) {
+        $this->isArgument = $isArgument;
+        $this->isVariableLength = $isVariableLength;
+        return $this;
+    }
 
     public $name;
     public function setName($name) {
@@ -42,12 +50,17 @@ class Option extends BaseClass
         return $this;
     }
 
-    public function setDescription($descrption) {
-        $this->description = $descrption;
+    public function setDescription($description) {
+        $this->description = $description;
         return $this;
     }
 
     public $required;
+    public function setRequired($required = true) {
+        $this->required = $required;
+        return $this;
+    }
+
     public $description;
     public $type = self::TYPE_BOOL;
 }

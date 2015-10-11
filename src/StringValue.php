@@ -21,6 +21,24 @@ class StringVar extends BaseClass
         }
     }
 
+    /**
+     * Returns substring after provided start
+     *
+     * @param $substring
+     * @param $ignoreCase
+     * @return bool|string
+     */
+    public function afterStarts($substring, $ignoreCase = false) {
+        $strLen = strlen($substring);
+        if ($ignoreCase) {
+            $starts = strtolower(substr($this->value, 0, $strLen)) === strtolower($substring);
+        }
+        else {
+            $starts = substr($this->value, 0, $strLen) === $substring;
+        }
+        return $starts ? substr($this->value, $strLen) : false;
+    }
+
     public function ends($substring, $ignoreCase = false) {
         $strLen = strlen($substring);
         if ($ignoreCase) {

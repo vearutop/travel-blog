@@ -2,6 +2,8 @@
 
 namespace TravelBlog\Cli;
 
+use TravelBlog\Command;
+use TravelBlog\Command\Option;
 use TravelBlog\Entity\Session;
 use TravelBlog\Identity;
 use TravelBlog\IdentityProvider;
@@ -21,7 +23,7 @@ class MigrateCommand extends Command
      * @param static|\stdClass $options
      * @return void
      */
-    public function describeSwitches($options)
+    public function setUpOptions($options)
     {
         $options->dryRun = Option::create()->setDescription('Read-only mode to check current status');
         $options->continueAfterFail = Option::create()->setDescription('Do not stop migrations after failure');

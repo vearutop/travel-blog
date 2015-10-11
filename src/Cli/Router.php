@@ -2,6 +2,7 @@
 
 namespace TravelBlog\Cli;
 
+use TravelBlog\Command;
 use TravelBlog\Request;
 
 class Router extends \TravelBlog\Router
