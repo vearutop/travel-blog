@@ -27,6 +27,7 @@ abstract class Command
              * @var Option $option
              */
             foreach ((array)$this->options as $name => $option) {
+                $option->name = $name;
                 if ($option->shortName) {
                     $this->optionsByShortName[$option->shortName] = $option;
                 }

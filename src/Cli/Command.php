@@ -4,6 +4,7 @@ namespace TravelBlog\Cli;
 
 
 use TravelBlog\Command\Exception;
+use TravelBlog\Command\Option;
 use TravelBlog\Request;
 use TravelBlog\StringVar;
 
@@ -11,6 +12,10 @@ abstract class Command extends \TravelBlog\Command
 {
     const OPTION_NAME = '--';
     const OPTION_SHORT = '-';
+
+    protected $autoFlagName = true;
+    protected $autoShortName = false;
+
     public function setup(Request $request) {
         $tokens = $request->server()->argv;
         $argc = count($tokens);
@@ -34,8 +39,20 @@ abstract class Command extends \TravelBlog\Command
 
             if (null === $option) {
 
+
             }
 
+        }
+    }
+
+    public function help() {
+        echo "Usage:" . PHP_EOL;
+        foreach ($this->arguments as $argument) {
+
+        }
+        /** @var Option $option */
+        foreach ((array)$this->options as $option) {
+            echo "  " . self::OPTION_NAME . $option->flagName . ' ' . $option->description . PHP_EOL;
         }
     }
 

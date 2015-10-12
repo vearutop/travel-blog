@@ -33,6 +33,12 @@ class Option extends BaseClass
         return $this;
     }
 
+    public $flagName;
+    public function setFlagName($flagName) {
+        $this->name = $flagName;
+        return $this;
+    }
+
     public $shortName;
     public function setShortName($shortName) {
         $this->shortName = $shortName;
