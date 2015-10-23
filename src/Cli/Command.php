@@ -25,6 +25,7 @@ abstract class Command extends \TravelBlog\Command
                 }
                 $option = $this->optionsByName[$optionName];
             }
+
             elseif ($optionName = $token->afterStarts(self::OPTION_SHORT)) {
                 if (!isset($this->optionsByName[$optionName])) {
                     throw new Exception('Unknown option "' . self::OPTION_NAME . $optionName . '"', Exception::UNKNOWN_OPTION);
@@ -33,10 +34,16 @@ abstract class Command extends \TravelBlog\Command
             }
 
             if (null === $option) {
+                $this->arguments;
+
 
             }
 
         }
+    }
+
+    public function help() {
+
     }
 
 }

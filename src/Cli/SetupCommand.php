@@ -14,16 +14,8 @@ use TravelBlog\Command\Option;
 
 class SetupCommand extends Command
 {
-    public $databaseType;
-    public $databaseUser;
-    public $databaseHost;
-    public $databasePassword;
-    public $databaseName;
-
-    public $cacheType;
-    public $cacheHost;
-    public $cachePort;
-    public $cachePath;
+    public $databaseDsn;
+    public $cacheDsn;
 
     public $vkAppId;
     public $vkAppKey;
@@ -31,46 +23,42 @@ class SetupCommand extends Command
     public $googleAppId;
     public $googleAppKey;
 
-    public function setUpOptions($options, &$arguments)
+    public function setUpOptions($options)
     {
-        $options->databaseType = Option::create()
-            ->setEnum('mysql', 'pgsql', 'sqlite');
+        $options->databaseDsn = Option::create()
+            ->setDescription('Database connection string (example mysqli://user:password@localhost/db_name)');
 
-        $options->databaseUser = Option::create()
-            ->setDescription('Database user name (skip for sqlite)');
-
-        $options->databaseHost = Option::create();
-
-        $options->databasePassword = Option::create()
-            ->setType(Option::TYPE_PROMPT);
-
-        $options->cacheType = Option::create()
-            ->setEnum('memcached', 'file', 'void');
-
-        $options->cacheHost = Option::create();
-        $options->cachePort = Option::create();
-        $options->cachePath = Option::create();
+        $options->cacheDsn = Option::create()
+            ->setDescription('Cache storage connection string (example memcached://localhost:11211)');
 
         $options->vkAppId = Option::create()
-            ->setDescription('');
+            ->setDescription('Vk.com API application id');
 
+        $options->vkAppKey = Option::create()
+            ->setType(Option::TYPE_PROMPT)
+            ->setDescription('Vk.com API application secret key');
 
-        // TODO: Implement initOptions() method.
+        $options->googleAppId = Option::create()
+            ->setDescription('Google API application id');
+
+        $options->googleAppKey = Option::create()
+            ->setType(Option::TYPE_PROMPT)
+            ->setDescription('Google API application secret key');
     }
 
     public function describeCommand()
     {
-        // TODO: Implement describeCommand() method.
+        return 'Setup application';
     }
 
     public function getName()
     {
-        // TODO: Implement getName() method.
+        return 'setup';
     }
 
     public function execute()
     {
-        // TODO: Implement execute() method.
+        file_put_contents(__DIR__ . '/../', '');
     }
 
 }

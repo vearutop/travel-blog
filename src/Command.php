@@ -3,6 +3,7 @@
 namespace TravelBlog;
 
 use TravelBlog\Command\Option;
+use Yaoi\String\Utils;
 
 abstract class Command
 {
@@ -27,12 +28,20 @@ abstract class Command
              * @var Option $option
              */
             foreach ((array)$this->options as $name => $option) {
+                if ($option->isArgument) {
+                    $this->arguments []= $option;
+                    continue;
+                }
+
                 if ($option->shortName) {
                     $this->optionsByShortName[$option->shortName] = $option;
                 }
-                if ($option->name) {
-                    $this->optionsByName[$option->name] = $option;
+
+                if (empty($option->name)) {
+                    $option->name = Utils::fromCamelCase($name, '-');
                 }
+
+                $this->optionsByName[$option->name] = $option;
             }
         }
         return $this->options;
