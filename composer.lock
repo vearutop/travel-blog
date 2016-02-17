@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "defa28126552cbe3df80c501b24f8aef",
+    "hash": "f07757ba58c53f2083b2dee9387b81e3",
     "packages": [
         {
             "name": "php-yaoi/php-yaoi",

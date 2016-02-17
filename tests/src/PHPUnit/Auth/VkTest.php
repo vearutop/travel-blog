@@ -1,6 +1,6 @@
 <?php
 
-namespace Auth;
+namespace TravelBlogTests\PHPUnit\Auth;
 
 
 use TravelBlog\Request;
