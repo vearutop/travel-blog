@@ -2,7 +2,7 @@
 
 namespace TravelBlog\Ui;
 
-use TravelBlog\Auth\Auth;
+use TravelBlog\Auth\AuthService;
 use TravelBlog\Controller;
 use TravelBlog\Entity\Identity;
 use TravelBlog\Entity\User;
@@ -18,8 +18,8 @@ class AuthController extends Controller
 
     public function actionSignIn() {
         //var_dump($this->request);
-        $identity = Password::findIdentity($this->request);
-        Auth::getInstance()->signIn($identity);
+        $identity = Password::findIdentityByRequest($this->request);
+        AuthService::getInstance()->signIn($identity);
 
         Router::redirect('/albums');
     }
@@ -82,7 +82,7 @@ class AuthController extends Controller
         $userIdentity->addedAt = TimeMachine::getInstance()->now();
         $userIdentity->save();
 
-        Auth::getInstance()->signIn($identity);
+        AuthService::getInstance()->signIn($identity);
         Router::redirect('/albums');
     }
 }

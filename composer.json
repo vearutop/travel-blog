@@ -1,6 +1,7 @@
 {
     "require": {
-        "php-yaoi/php-yaoi": "dev-master",
+        "php-yaoi/php-yaoi": "dev-dirty",
+        "php-yaoi/twbs": "dev-master",
         "behat/transliterator": "^1.1",
         "ashtokalo/php-translit": "dev-master"
     },

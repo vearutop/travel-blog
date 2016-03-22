@@ -34,10 +34,8 @@ class Password implements IdentityContract
         return md5(self::$salt . $login . $password);
     }
 
-    public static function findIdentity(Request $request) {
-        $login = $request->post('login');
-        $password = $request->post('password');
-
+    public static function findIdentity($login, $password)
+    {
         $cols = Identity::columns();
 
         /** @var Identity $identity */
@@ -56,6 +54,18 @@ class Password implements IdentityContract
         }
 
         return $identity;
+    }
+
+    /**
+     * @param Request $request
+     * @return Identity
+     * @throws \Exception
+     * @deprecated
+     */
+    public static function findIdentityByRequest(Request $request) {
+        $login = $request->post('login');
+        $password = $request->post('password');
+        return self::findIdentity($login, $password);
     }
 
 }

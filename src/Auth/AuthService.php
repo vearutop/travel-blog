@@ -10,12 +10,13 @@ use TravelBlog\Entity\UserIdentity;
 use Yaoi\Date\TimeMachine;
 use Yaoi\Service;
 
-class Auth extends Service
+class AuthService extends Service
 {
     private $identityId;
     private $users;
 
     public function signIn(Identity $identity) {
+        // TODO multi identity login
         $session = new Session();
         $session->identityId = $identity->id;
 
@@ -42,6 +43,17 @@ class Auth extends Service
         $session->save();
     }
 
+    public function signOut() {
+        if (isset($_COOKIE[$this->settings->sessionName])) {
+            Session::statement()->delete()->where(
+                '? = ?',
+                Session::columns()->token,
+                $_COOKIE[$this->settings->sessionName]
+            )->query();
+        }
+
+    }
+
     private function initSession($token = null) {
         if ($this->identityId !== null) {
             return $this;
@@ -56,9 +68,11 @@ class Auth extends Service
         }
         $session = Session::findByToken($token);
         if (!$session) {
-            throw new \Exception('Session not found');
+            $this->identityId = false;
         }
-        $this->identityId = $session->identityId;
+        else {
+            $this->identityId = $session->identityId;
+        }
         return $this;
     }
 

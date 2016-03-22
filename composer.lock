@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5cfa89253c8781300f21887aedcc4619",
-    "content-hash": "830d4fb0355f90148bfdb7b9ece4be45",
+    "hash": "fae7ea21236e5fc9d3383e0d7e76fc86",
+    "content-hash": "48c774f1c356169ab5145b858adc7c50",
     "packages": [
         {
             "name": "ashtokalo/php-translit",
@@ -80,16 +80,16 @@
         },
         {
             "name": "php-yaoi/php-yaoi",
-            "version": "dev-master",
+            "version": "dev-dirty",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-yaoi/php-yaoi.git",
-                "reference": "5c23c594074eeb2a76cefeb6fb604d3dea2d623c"
+                "reference": "3a11bb844fef64c7e49795dc06022f8054390aea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-yaoi/php-yaoi/zipball/5c23c594074eeb2a76cefeb6fb604d3dea2d623c",
-                "reference": "5c23c594074eeb2a76cefeb6fb604d3dea2d623c",
+                "url": "https://api.github.com/repos/php-yaoi/php-yaoi/zipball/3a11bb844fef64c7e49795dc06022f8054390aea",
+                "reference": "3a11bb844fef64c7e49795dc06022f8054390aea",
                 "shasum": ""
             },
             "require": {
@@ -127,7 +127,53 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-01-11 23:36:27"
+            "time": "2016-03-15 07:50:44"
+        },
+        {
+            "name": "php-yaoi/twbs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-yaoi/twbs.git",
+                "reference": "23de43f9550bf5b1838cc36c63f34c8d8860cafb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-yaoi/twbs/zipball/23de43f9550bf5b1838cc36c63f34c8d8860cafb",
+                "reference": "23de43f9550bf5b1838cc36c63f34c8d8860cafb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "php-yaoi/php-yaoi": "dev-dirty"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yaoi\\Twbs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Viacheslav Poturaev",
+                    "email": "vearutop@gmail.com",
+                    "homepage": "https://github.com/vearutop"
+                }
+            ],
+            "description": "Twitter Bootstrap bindings for php-yaoi",
+            "homepage": "https://github.com/php-yaoi/twbs",
+            "keywords": [
+                "framework"
+            ],
+            "time": "2016-03-21 16:31:15"
         }
     ],
     "packages-dev": [
@@ -538,16 +584,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.23",
+            "version": "4.8.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483"
+                "reference": "a1066c562c52900a142a0e2bbf0582994671385e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6e351261f9cd33daf205a131a1ba61c6d33bd483",
-                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a1066c562c52900a142a0e2bbf0582994671385e",
+                "reference": "a1066c562c52900a142a0e2bbf0582994671385e",
                 "shasum": ""
             },
             "require": {
@@ -606,7 +652,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-02-11 14:56:33"
+            "time": "2016-03-14 06:16:08"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -782,16 +828,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.3",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6e7133793a8e5a5714a551a8324337374be209df"
+                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6e7133793a8e5a5714a551a8324337374be209df",
-                "reference": "6e7133793a8e5a5714a551a8324337374be209df",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
+                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
                 "shasum": ""
             },
             "require": {
@@ -828,7 +874,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2015-12-02 08:37:27"
+            "time": "2016-02-26 18:40:46"
         },
         {
             "name": "sebastian/exporter",
@@ -1037,16 +1083,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a"
+                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3cf0709d7fe936e97bee9e954382e449003f1d9a",
-                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/b5ba64cd67ecd6887f63868fa781ca094bd1377c",
+                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c",
                 "shasum": ""
             },
             "require": {
@@ -1082,13 +1128,14 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-02 13:44:19"
+            "time": "2016-02-23 15:16:06"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "php-yaoi/php-yaoi": 20,
+        "php-yaoi/twbs": 20,
         "ashtokalo/php-translit": 20
     },
     "prefer-stable": false,

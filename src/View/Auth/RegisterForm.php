@@ -7,10 +7,24 @@ use Yaoi\View\Hardcoded;
 
 class RegisterForm extends Hardcoded
 {
+
+    private $submitUrl;
+
+    /**
+     * @param mixed $submitUrl
+     * @return RegisterForm
+     */
+    public function setSubmitUrl($submitUrl)
+    {
+        $this->submitUrl = $submitUrl;
+        return $this;
+    }
+
+
     public function render()
     {
         ?>
-        <form action="/auth/register/receive" method="post">
+        <form action="<?=$this->submitUrl?>" method="post">
             <label>Login <input name="login" /></label>
             <label>Password <input name="password" type="password" /></label>
             <label>Repeat password <input name="repeat_password" type="password" /></label>

@@ -3,7 +3,7 @@
 namespace TravelBlog\Ui;
 
 
-use TravelBlog\Auth\Auth;
+use TravelBlog\Auth\AuthService;
 use TravelBlog\Controller;
 use TravelBlog\Entity\Album;
 use TravelBlog\Entity\Image;
@@ -23,7 +23,7 @@ class AlbumController extends Controller
     public function __construct(Request $request)
     {
         parent::__construct($request);
-        if (!$this->user = Auth::getInstance()->getUser()) {
+        if (!$this->user = AuthService::getInstance()->getUser()) {
             throw new \Exception('Authenticated user required');
         }
     }
