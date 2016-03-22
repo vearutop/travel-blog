@@ -1,6 +1,8 @@
 {
     "require": {
-        "php-yaoi/php-yaoi": "dev-master"
+        "php-yaoi/php-yaoi": "dev-master",
+        "behat/transliterator": "^1.1",
+        "ashtokalo/php-translit": "dev-master"
     },
     "autoload": {
         "psr-4": {
