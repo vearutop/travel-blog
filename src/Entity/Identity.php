@@ -1,5 +1,5 @@
 <?php
-namespace TravelBlog;
+namespace TravelBlog\Entity;
 
 use Yaoi\Database\Definition\Column;
 use Yaoi\Database\Definition\Index;

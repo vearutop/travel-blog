@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vearutop
- * Date: 04.10.2015
- * Time: 12:04
- */
-
 namespace TravelBlog;
 
 
 use Yaoi\BaseClass;
+use Yaoi\Io\Request;
 
 /**
  * Class Controller
@@ -18,6 +12,7 @@ use Yaoi\BaseClass;
  */
 class Controller extends BaseClass
 {
+    /** @var Request  */
     protected $request;
 
     public function __construct(Request $request) {

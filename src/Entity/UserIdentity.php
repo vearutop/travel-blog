@@ -1,6 +1,6 @@
 <?php
 
-namespace TravelBlog;
+namespace TravelBlog\Entity;
 
 
 use Yaoi\Database\Definition\Column;
@@ -12,6 +12,7 @@ class UserIdentity extends Entity
 {
     public $userId;
     public $identityId;
+    public $priority;
     public $addedAt;
 
     static function setUpColumns($columns)
@@ -19,6 +20,7 @@ class UserIdentity extends Entity
         $columns->userId = User::columns()->id;
         $columns->identityId = Identity::columns()->id;
         $columns->addedAt = Column::INTEGER + Column::UNSIGNED;
+        $columns->priority = Column::INTEGER + Column::SIZE_1B;
     }
 
     static function setUpTable(\Yaoi\Database\Definition\Table $table, $columns)

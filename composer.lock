@@ -4,9 +4,80 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a339358f752f6f1de6303165ec8e586f",
-    "content-hash": "4a7c197f49e0aed9361501a550a3a07a",
+    "hash": "fae7ea21236e5fc9d3383e0d7e76fc86",
+    "content-hash": "48c774f1c356169ab5145b858adc7c50",
     "packages": [
+        {
+            "name": "ashtokalo/php-translit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ashtokalo/php-translit.git",
+                "reference": "077ff165a4345433a57fa7736309d40764831b53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ashtokalo/php-translit/zipball/077ff165a4345433a57fa7736309d40764831b53",
+                "reference": "077ff165a4345433a57fa7736309d40764831b53",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP library to convert text from one script to enother.",
+            "keywords": [
+                "latinization",
+                "romanization",
+                "translit",
+                "transliteration"
+            ],
+            "time": "2014-09-28 09:03:55"
+        },
+        {
+            "name": "behat/transliterator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Transliterator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "time": "2015-09-28 16:26:35"
+        },
         {
             "name": "php-yaoi/php-yaoi",
             "version": "dev-dirty",
@@ -1064,7 +1135,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "php-yaoi/php-yaoi": 20,
-        "php-yaoi/twbs": 20
+        "php-yaoi/twbs": 20,
+        "ashtokalo/php-translit": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

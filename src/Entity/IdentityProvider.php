@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vearutop
- * Date: 04.10.2015
- * Time: 11:53
- */
 
-namespace TravelBlog;
+namespace TravelBlog\Entity;
 
 use Yaoi\Database\Definition\Column;
 use Yaoi\Database\Definition\Table;
@@ -27,7 +21,6 @@ class IdentityProvider extends Entity
 
     static function setUpTable(\Yaoi\Database\Definition\Table $table, $columns)
     {
-        // TODO: Implement setUpTable() method.
     }
 
 }
