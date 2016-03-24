@@ -4,61 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fae7ea21236e5fc9d3383e0d7e76fc86",
-    "content-hash": "48c774f1c356169ab5145b858adc7c50",
+    "hash": "4f57f0f605c3f7595df7216880d5be44",
+    "content-hash": "b3cd2885a01cf9ae0cae61db4733eba5",
     "packages": [
         {
-            "name": "ashtokalo/php-translit",
+            "name": "behat/transliterator",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ashtokalo/php-translit.git",
-                "reference": "077ff165a4345433a57fa7736309d40764831b53"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ashtokalo/php-translit/zipball/077ff165a4345433a57fa7736309d40764831b53",
-                "reference": "077ff165a4345433a57fa7736309d40764831b53",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PHP library to convert text from one script to enother.",
-            "keywords": [
-                "latinization",
-                "romanization",
-                "translit",
-                "transliteration"
-            ],
-            "time": "2014-09-28 09:03:55"
-        },
-        {
-            "name": "behat/transliterator",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
                 "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
+                "reference": "5617922041771893fb0e9593b67958e411604c09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/5617922041771893fb0e9593b67958e411604c09",
+                "reference": "5617922041771893fb0e9593b67958e411604c09",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "chuyskywalker/rolling-curl": "^3.1",
+                "php-yaoi/php-yaoi": "^1.0"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -76,21 +49,15 @@
                 "slug",
                 "transliterator"
             ],
-            "time": "2015-09-28 16:26:35"
+            "time": "2016-03-01 09:37:21"
         },
         {
             "name": "php-yaoi/php-yaoi",
             "version": "dev-dirty",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-yaoi/php-yaoi.git",
-                "reference": "3a11bb844fef64c7e49795dc06022f8054390aea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-yaoi/php-yaoi/zipball/3a11bb844fef64c7e49795dc06022f8054390aea",
-                "reference": "3a11bb844fef64c7e49795dc06022f8054390aea",
-                "shasum": ""
+                "url": "git@bitbucket.org:vearutop/php-yaoi.git",
+                "reference": "d661db9e77a3bc3f22c1eff89819796e9bbaeab8"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -111,7 +78,11 @@
                     "Yaoi\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "YaoiTests\\": "tests/src/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -127,21 +98,15 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-15 07:50:44"
+            "time": "2016-03-24 02:10:05"
         },
         {
             "name": "php-yaoi/twbs",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-yaoi/twbs.git",
-                "reference": "23de43f9550bf5b1838cc36c63f34c8d8860cafb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-yaoi/twbs/zipball/23de43f9550bf5b1838cc36c63f34c8d8860cafb",
-                "reference": "23de43f9550bf5b1838cc36c63f34c8d8860cafb",
-                "shasum": ""
+                "url": "git@bitbucket.org:vearutop/yaoi-twbs.git",
+                "reference": "c10e2a6df45e4dbf8971c2785cdb8bc948e28c7c"
             },
             "require": {
                 "php": ">=5.3.0",
@@ -157,7 +122,11 @@
                     "Yaoi\\Twbs\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Yaoi\\Twbs\\Tests\\": "tests/src/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -173,7 +142,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-21 16:31:15"
+            "time": "2016-03-22 10:54:45"
         }
     ],
     "packages-dev": [
@@ -1136,7 +1105,7 @@
     "stability-flags": {
         "php-yaoi/php-yaoi": 20,
         "php-yaoi/twbs": 20,
-        "ashtokalo/php-translit": 20
+        "behat/transliterator": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

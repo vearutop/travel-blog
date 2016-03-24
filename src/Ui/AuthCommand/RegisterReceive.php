@@ -27,6 +27,9 @@ class RegisterReceive extends Command
     static function setUpDefinition(Definition $definition, $options)
     {
         $options->login = Command\Option::create();
+        $options->password = Command\Option::create();
+        $options->repeatPassword = Command\Option::create();
+        $options->email = Command\Option::create();
     }
 
     public function performAction()

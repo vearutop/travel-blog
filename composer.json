@@ -2,16 +2,29 @@
     "require": {
         "php-yaoi/php-yaoi": "dev-dirty",
         "php-yaoi/twbs": "dev-master",
-        "behat/transliterator": "^1.1",
-        "ashtokalo/php-translit": "dev-master"
+        "behat/transliterator": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "TravelBlog\\": "src/",
-            "TravelBlogTests\\": "tests/src/"
+            "TravelBlog\\Tests\\": "tests/src/"
         }
     },
     "require-dev": {
         "phpunit/phpunit": "^4.0"
-    }
+    },
+    "repositories": [
+        {
+            "url": "https://github.com/vearutop/archive-tar.git",
+            "type": "git"
+        },
+        {
+            "url": "git@bitbucket.org:vearutop/php-yaoi.git",
+            "type": "git"
+        },
+        {
+            "url": "git@bitbucket.org:vearutop/yaoi-twbs.git",
+            "type": "git"
+        }
+    ]
 }
