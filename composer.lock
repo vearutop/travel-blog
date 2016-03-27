@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4f57f0f605c3f7595df7216880d5be44",
+    "hash": "4d91342dd5b85ff8d395cb6c366126fe",
     "content-hash": "b3cd2885a01cf9ae0cae61db4733eba5",
     "packages": [
         {
@@ -57,7 +57,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/php-yaoi.git",
-                "reference": "d661db9e77a3bc3f22c1eff89819796e9bbaeab8"
+                "reference": "b6232d28f411cdc2c9655242296af9987bacd3e4"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -98,7 +98,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-24 02:10:05"
+            "time": "2016-03-27 06:26:05"
         },
         {
             "name": "php-yaoi/twbs",
