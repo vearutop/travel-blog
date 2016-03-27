@@ -5,6 +5,7 @@ namespace TravelBlog\Ui\AuthCommand;
 use TravelBlog\View\Auth\RegisterForm;
 use Yaoi\Command;
 use Yaoi\Command\Definition;
+use Yaoi\Twbs\Io\Content\Form;
 
 class Register extends Command
 {
@@ -15,9 +16,7 @@ class Register extends Command
 
     public function performAction()
     {
-        $this->response->addContent(
-            RegisterForm::create()->setSubmitUrl($this->io->makeAnchor(RegisterReceive::createState()))
-        );
+        $this->response->addContent(new Form(RegisterReceive::definition(), $this->io));
     }
 
 }

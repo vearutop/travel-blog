@@ -16,6 +16,7 @@ class AlbumCommand extends ActionCommand
             ->setIsUnnamed()
             ->setIsRequired()
             ->addToEnum(Catalog::definition(), '')
+            ->addToEnum(Create::definition())
             ->addToEnum(Details::definition());
     }
 

@@ -9,9 +9,11 @@ use TravelBlog\Entity\User;
 use TravelBlog\Entity\UserIdentity;
 use TravelBlog\Identity\Password;
 use TravelBlog\Router;
+use TravelBlog\Ui\AlbumCommand\Catalog;
 use Yaoi\Command;
 use Yaoi\Command\Definition;
 use Yaoi\Date\TimeMachine;
+use Yaoi\Twbs\Io\Content\Form;
 
 class RegisterReceive extends Command
 {
@@ -26,42 +28,29 @@ class RegisterReceive extends Command
      */
     static function setUpDefinition(Definition $definition, $options)
     {
-        $options->login = Command\Option::create();
-        $options->password = Command\Option::create();
-        $options->repeatPassword = Command\Option::create();
-        $options->email = Command\Option::create();
+        $options->login = Command\Option::create()->setType()->setIsRequired();
+        $options->password = Command\Option::create()->setType()->setIsRequired();
+        $options->repeatPassword = Command\Option::create()->setType()->setIsRequired();
+        $options->email = Command\Option::create()->setType();
     }
 
     public function performAction()
     {
-        $login = $this->request->post('login');
-        $password = $this->request->post('password');
-        $repeatPassword = $this->request->post('repeat_password');
-        $email = $this->request->post('email');
+        var_dump($this->login);
 
-        if (empty($login)) {
-            throw new \Exception('Please provide login');
-        }
-
-        if (empty($password)) {
-            throw  new \Exception('Please provide password');
-        }
-
-        if ($password !== $repeatPassword) {
-            throw new \Exception('Repeat password does not match ');
-        }
+        $this->response->addContent(new Form(RegisterReceive::definition(), $this->io));
 
         $identity = new Identity();
-        $identity->providerUserId = $login;
+        $identity->providerUserId = $this->login;
         $identity->providerId = Password::getProvider()->id;
-        $identity->meta = Password::getPasswordHash($login, $password);
+        $identity->meta = Password::getPasswordHash($this->login, $this->password);
         if ($identity->findSaved()) {
             throw new \Exception('Login is already registered');
         }
         $identity->save();
 
         $user = new User();
-        $user->urlName = $login;
+        $user->urlName = $this->login;
         $user->save();
 
         $userIdentity = new UserIdentity();
@@ -71,7 +60,7 @@ class RegisterReceive extends Command
         $userIdentity->save();
 
         AuthService::getInstance()->signIn($identity);
-        Router::redirect('/albums');
+        Router::redirect($this->io->makeAnchor(Catalog::createState()));
     }
 
 

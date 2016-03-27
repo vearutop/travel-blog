@@ -12,6 +12,7 @@ use Yaoi\Command\Definition;
 use Yaoi\Io\Content\Anchor;
 use Yaoi\Io\Content\Rows;
 use Yaoi\Rows\Processor;
+use Yaoi\Twbs\Io\Content\Form;
 
 class Catalog extends Command
 {
@@ -32,8 +33,7 @@ class Catalog extends Command
             ->query()
             ->fetchAll();
 
-        $this->response->addContent(new CreateForm());
-
+        $this->response->addContent(new Form(Create::definition(), $this->io));
         $details = Details::createState();
 
         if ($albums) {
