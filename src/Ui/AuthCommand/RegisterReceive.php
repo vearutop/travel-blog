@@ -38,7 +38,7 @@ class RegisterReceive extends Command
     {
         var_dump($this->login);
 
-        $this->response->addContent(new Form(RegisterReceive::definition(), $this->io));
+        $this->response->addContent(new Form(RegisterReceive::createState($this->io), $this->io));
 
         $identity = new Identity();
         $identity->providerUserId = $this->login;

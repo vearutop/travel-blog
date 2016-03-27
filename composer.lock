@@ -57,7 +57,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/php-yaoi.git",
-                "reference": "b6232d28f411cdc2c9655242296af9987bacd3e4"
+                "reference": "80717b37ffaddbbe884d94b9fbf2a9d80a8661f3"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -98,7 +98,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-27 06:26:05"
+            "time": "2016-03-27 17:54:40"
         },
         {
             "name": "php-yaoi/twbs",
@@ -106,7 +106,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/yaoi-twbs.git",
-                "reference": "c10e2a6df45e4dbf8971c2785cdb8bc948e28c7c"
+                "reference": "c30de6d9c74540fc305e45f331948f666833fb1f"
             },
             "require": {
                 "php": ">=5.3.0",
@@ -142,7 +142,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-22 10:54:45"
+            "time": "2016-03-27 17:55:22"
         }
     ],
     "packages-dev": [

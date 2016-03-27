@@ -33,7 +33,7 @@ class Catalog extends Command
             ->query()
             ->fetchAll();
 
-        $this->response->addContent(new Form(Create::definition(), $this->io));
+        $this->response->addContent(new Form(Create::createState(), $this->io));
         $details = Details::createState();
 
         if ($albums) {

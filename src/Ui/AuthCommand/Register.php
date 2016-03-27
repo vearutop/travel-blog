@@ -16,7 +16,8 @@ class Register extends Command
 
     public function performAction()
     {
-        $this->response->addContent(new Form(RegisterReceive::definition(), $this->io));
+        $this->response->success('Avec plaisir!');
+        $this->response->addContent(new Form(RegisterReceive::createState(), $this->io));
     }
 
 }
