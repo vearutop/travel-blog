@@ -17,7 +17,9 @@ class AlbumCommand extends ActionCommand
             ->setIsRequired()
             ->addToEnum(Catalog::definition(), '')
             ->addToEnum(Create::definition())
-            ->addToEnum(Details::definition());
+            ->addToEnum(Details::definition())
+            ->addToEnum(Upload::definition())
+        ;
     }
 
     public function performAction()

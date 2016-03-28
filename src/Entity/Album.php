@@ -29,5 +29,10 @@ class Album extends Entity
     {
     }
 
+    public function save()
+    {
+        $this->updated = time();
+        parent::save();
+    }
 
 }

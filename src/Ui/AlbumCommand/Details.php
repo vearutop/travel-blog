@@ -47,7 +47,8 @@ class Details extends Command
 
         $uploadHandler = Upload::createState();
         $uploadHandler->albumId = $this->albumId;
-        $uploadUrl = $this->io->makeAnchor($uploadHandler);
+        $uploadUrl = (string)$this->io->makeAnchor($uploadHandler);
+        var_dump($uploadUrl);
         $this->response->addContent(new Form($uploadUrl));
     }
 

@@ -3,6 +3,11 @@
 namespace TravelBlog\Ui\AlbumCommand;
 
 
+use TravelBlog\Auth\AuthService;
+use TravelBlog\Entity\Album;
+use TravelBlog\Entity\Image;
+use TravelBlog\FileStorage;
+use TravelBlog\Ui\UploadController;
 use Yaoi\Command;
 use Yaoi\Command\Definition;
 
@@ -19,19 +24,16 @@ class Upload extends Command
 
     public function performAction()
     {
-        $id = $this->request->get('id');
-
-        if (!$id) {
-            throw new \Exception('Empty id');
-        }
+        $id = $this->albumId;
         $album = Album::findByPrimaryKey($id);
 
         if (!$album) {
             throw new \Exception('Album not found');
         }
+        $user = AuthService::getInstance()->getUser();
 
-        $upload = new UploadController($this->request);
-        $upload->receiveAction($this->user->urlName . '/' . $album->title);
+        $fileStorage = FileStorage::getInstance();
+        $fileStorage->receiveAction($user->urlName . '/' . $album->title);
 
         foreach (FileStorage::getInstance()->savedFiles as $filePath => $fileUrl) {
             $image = new Image();
@@ -39,6 +41,8 @@ class Upload extends Command
             $image->path = $filePath;
             $image->url = $fileUrl;
             $image->save();
+            $album->imagesCount++;
         }
+        $album->save();
     }
 }
