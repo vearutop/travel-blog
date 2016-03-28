@@ -36,31 +36,33 @@ class RegisterReceive extends Command
 
     public function performAction()
     {
-        var_dump($this->login);
+        try {
+            $identity = new Identity();
+            $identity->providerUserId = $this->login;
+            $identity->providerId = Password::getProvider()->id;
+            $identity->meta = Password::getPasswordHash($this->login, $this->password);
+            if ($identity->findSaved()) {
+                throw new \Exception('Login is already registered');
+            }
+            $identity->save();
 
-        $this->response->addContent(new Form(RegisterReceive::createState($this->io), $this->io));
+            $user = new User();
+            $user->urlName = $this->login;
+            $user->save();
 
-        $identity = new Identity();
-        $identity->providerUserId = $this->login;
-        $identity->providerId = Password::getProvider()->id;
-        $identity->meta = Password::getPasswordHash($this->login, $this->password);
-        if ($identity->findSaved()) {
-            throw new \Exception('Login is already registered');
+            $userIdentity = new UserIdentity();
+            $userIdentity->userId = $user->id;
+            $userIdentity->identityId = $identity->id;
+            $userIdentity->addedAt = TimeMachine::getInstance()->now();
+            $userIdentity->save();
+
+            AuthService::getInstance()->signIn($identity);
+            Router::redirect($this->io->makeAnchor(Catalog::createState()));
         }
-        $identity->save();
-
-        $user = new User();
-        $user->urlName = $this->login;
-        $user->save();
-
-        $userIdentity = new UserIdentity();
-        $userIdentity->userId = $user->id;
-        $userIdentity->identityId = $identity->id;
-        $userIdentity->addedAt = TimeMachine::getInstance()->now();
-        $userIdentity->save();
-
-        AuthService::getInstance()->signIn($identity);
-        Router::redirect($this->io->makeAnchor(Catalog::createState()));
+        catch (\Exception $exception) {
+            $this->response->error($exception->getMessage());
+            $this->response->addContent(new Form(RegisterReceive::createState($this->io), $this->io));
+        }
     }
 
 
