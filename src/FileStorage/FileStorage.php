@@ -1,22 +1,29 @@
 <?php
 
-namespace TravelBlog;
+namespace TravelBlog\FileStorage;
 
 use Behat\Transliterator\Transliterator;
 use Yaoi\Service;
 
 class FileStorage extends Service
 {
+    /** @var  Settings */
+    protected $settings;
+    public static function getSettingsClassName()
+    {
+        return Settings::className();
+    }
+
     public $savedFiles = array();
 
     public function hardSave($directory, $path) {
         $basePath = rtrim($this->settings->path, '/') . '/' . Transliterator::urlize($directory);
-        $baseUrl = rtrim($this->settings->urlRoot, '/') . '/' . Transliterator::urlize($directory);
+        $baseUrl = rtrim($this->settings->urlPath, '/') . '/' . Transliterator::urlize($directory);
         if (!file_exists($basePath)) {
             mkdir($basePath, 0755, true);
         }
 
-        $savePath = realpath($basePath . '/' . basename($path));
+        $savePath = $basePath . '/' . basename($path);
         $saveUrl = $baseUrl . '/' . basename($path);
 
         if (rename($path, $savePath)) {
@@ -46,11 +53,6 @@ class FileStorage extends Service
 
 
 // Make sure file is not cached (as it happens for example on iOS devices)
-        header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-        header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-        header("Cache-Control: no-store, no-cache, must-revalidate");
-        header("Cache-Control: post-check=0, pre-check=0", false);
-        header("Pragma: no-cache");
 
         /*
         // Support CORS
@@ -98,7 +100,7 @@ class FileStorage extends Service
 // Remove old temp files
         if ($cleanupTargetDir) {
             if (!is_dir($targetDir) || !$dir = opendir($targetDir)) {
-                die('{"jsonrpc" : "2.0", "error" : {"code": 100, "message": "Failed to open temp directory."}, "id" : "id"}');
+                throw new Exception('Failed to open temp directory.', Exception::FAILED_TO_OPEN_TEMP);
             }
 
             while (($file = readdir($dir)) !== false) {

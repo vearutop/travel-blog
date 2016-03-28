@@ -8,7 +8,7 @@ use TravelBlog\Controller;
 use TravelBlog\Entity\Album;
 use TravelBlog\Entity\Image;
 use TravelBlog\Entity\User;
-use TravelBlog\FileStorage;
+use TravelBlog\FileStorage\FileStorage;
 use TravelBlog\Router;
 use TravelBlog\View\Album\CreateForm;
 use TravelBlog\View\Layout;

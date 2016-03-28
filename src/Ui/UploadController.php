@@ -4,7 +4,7 @@ namespace TravelBlog\Ui;
 
 
 use TravelBlog\Controller;
-use TravelBlog\FileStorage;
+use TravelBlog\FileStorage\FileStorage;
 use TravelBlog\View\Layout;
 use TravelBlog\View\Upload\Form;
 
