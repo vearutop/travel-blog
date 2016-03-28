@@ -57,7 +57,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/php-yaoi.git",
-                "reference": "5d73487326ce34b7eb968da585e83522b15f6c37"
+                "reference": "76dc8582b174530cba597783d2c2aa731d94437c"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -98,7 +98,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-28 10:11:51"
+            "time": "2016-03-28 11:23:16"
         },
         {
             "name": "php-yaoi/twbs",

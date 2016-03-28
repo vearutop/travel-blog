@@ -12,13 +12,17 @@ class Album extends Entity
     public $userId;
     public $title;
     public $created;
+    public $imagesCount;
+    public $updated;
 
     static function setUpColumns($columns)
     {
         $columns->id = Column::AUTO_ID;
         $columns->userId = User::columns()->id;
-        $columns->created = Column::INTEGER;
-        $columns->title = Column::STRING;
+        $columns->created = Column::INTEGER + Column::NOT_NULL;
+        $columns->title = Column::STRING + Column::NOT_NULL;
+        $columns->imagesCount = Column::INTEGER + Column::NOT_NULL;
+        $columns->updated = Column::INTEGER + Column::NOT_NULL;
     }
 
     static function setUpTable(\Yaoi\Database\Definition\Table $table, $columns)

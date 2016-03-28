@@ -41,8 +41,11 @@ class Catalog extends Command
                 ->map(function (Album $album) use ($details) {
                     $row = array();
                     $details->albumId = $album->id;
-                    $row['Title'] = new Anchor($album->title, $this->io->makeAnchor($details));
+                    $anchor = $this->io->makeAnchor($details);
+                    $row['Title'] = new Anchor($album->title, $anchor);
                     $row['Created'] = date('Y-m-d H:i:s', $album->created);
+                    $row['Updated'] = date('Y-m-d H:i:s', $album->updated);
+                    $row['Images'] = $album->imagesCount;
                     return $row;
                 })));
         }

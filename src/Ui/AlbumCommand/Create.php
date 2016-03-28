@@ -25,6 +25,9 @@ class Create extends Command
         $album = new Album();
         $album->userId = $user->id;
         $album->title = $this->title;
+        $album->created = time();
+        $album->updated = $album->created;
+        $album->imagesCount = 0;
         $album->save();
 
         Router::redirect($this->io->makeAnchor(Catalog::createState()));
