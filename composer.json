@@ -4,6 +4,7 @@
         "php-yaoi/twbs": "dev-master",
         "php-yaoi/oauth2": "dev-master",
         "php-yaoi/schema": "dev-master-bb",
+        "php-yaoi/command": "dev-master",
         "behat/transliterator": "dev-master"
     },
     "autoload": {
@@ -29,6 +30,10 @@
         },
         {
             "url": "git@bitbucket.org:vearutop/yaoi-oauth2.git",
+            "type": "git"
+        },
+        {
+            "url": "git@bitbucket.org:vearutop/yaoi-command.git",
             "type": "git"
         },
         {

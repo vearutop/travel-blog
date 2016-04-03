@@ -6,8 +6,9 @@ use TravelBlog\Auth\AuthService;
 use TravelBlog\Identity\Password;
 use TravelBlog\Router;
 use TravelBlog\Ui\AlbumCommand\AlbumCommand;
-use Yaoi\Command;
+use Yaoi\Command\Command;
 use Yaoi\Command\Definition;
+use Yaoi\Command\Option;
 
 class SignIn extends Command
 {
@@ -16,12 +17,12 @@ class SignIn extends Command
 
     static function setUpDefinition(Definition $definition, $options)
     {
-        $options->login = Command\Option::create()
+        $options->login = Option::create()
             ->setDescription('Login')
             ->setType()
             ->setIsRequired();
 
-        $options->password = Command\Option::create()
+        $options->password = Option::create()
             ->setDescription('Password')
             ->setType()
             ->setIsRequired();

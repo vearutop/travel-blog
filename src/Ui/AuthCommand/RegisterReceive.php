@@ -10,7 +10,8 @@ use TravelBlog\Entity\UserIdentity;
 use TravelBlog\Identity\Password;
 use TravelBlog\Router;
 use TravelBlog\Ui\AlbumCommand\Catalog;
-use Yaoi\Command;
+use Yaoi\Command\Command;
+use Yaoi\Command\Option;
 use Yaoi\Command\Definition;
 use Yaoi\Date\TimeMachine;
 use Yaoi\Twbs\Io\Content\Form;
@@ -28,10 +29,10 @@ class RegisterReceive extends Command
      */
     static function setUpDefinition(Definition $definition, $options)
     {
-        $options->login = Command\Option::create()->setType()->setIsRequired();
-        $options->password = Command\Option::create()->setType()->setIsRequired();
-        $options->repeatPassword = Command\Option::create()->setType()->setIsRequired();
-        $options->email = Command\Option::create()->setType();
+        $options->login = Option::create()->setType()->setIsRequired();
+        $options->password = Option::create()->setType()->setIsRequired();
+        $options->repeatPassword = Option::create()->setType()->setIsRequired();
+        $options->email = Option::create()->setType();
     }
 
     public function performAction()

@@ -7,7 +7,7 @@ use TravelBlog\Auth\AuthService;
 use TravelBlog\Entity\Album;
 use TravelBlog\Entity\User;
 use TravelBlog\View\Album\CreateForm;
-use Yaoi\Command;
+use Yaoi\Command\Command;
 use Yaoi\Command\Definition;
 use Yaoi\Io\Content\Anchor;
 use Yaoi\Io\Content\Rows;

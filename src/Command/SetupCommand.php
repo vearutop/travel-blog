@@ -6,7 +6,7 @@ namespace TravelBlog\Command;
 use Yaoi\Command\Definition;
 use Yaoi\Command\Option;
 
-class SetupCommand extends \Yaoi\Command
+class SetupCommand extends \Yaoi\Command\Command
 {
     public $databaseDsn;
     public $cacheDsn;

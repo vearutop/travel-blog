@@ -6,7 +6,7 @@ namespace TravelBlog\Ui\AuthCommand;
 use TravelBlog\Auth\AuthService;
 use TravelBlog\Router;
 use TravelBlog\Ui\Index;
-use Yaoi\Command;
+use Yaoi\Command\Command;
 use Yaoi\Command\Definition;
 
 class SignOut extends Command

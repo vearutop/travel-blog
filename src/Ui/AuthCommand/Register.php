@@ -2,8 +2,7 @@
 
 namespace TravelBlog\Ui\AuthCommand;
 
-use TravelBlog\View\Auth\RegisterForm;
-use Yaoi\Command;
+use Yaoi\Command\Command;
 use Yaoi\Command\Definition;
 use Yaoi\Twbs\Io\Content\Form;
 

@@ -7,7 +7,7 @@ use Yaoi\Command\Option;
 use Yaoi\Database;
 use Yaoi\Log;
 
-class MigrateCommand extends \Yaoi\Command
+class MigrateCommand extends \Yaoi\Command\Command
 {
     public $dryRun;
     public $verbose;

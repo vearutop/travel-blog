@@ -6,7 +6,8 @@ namespace TravelBlog\Ui\AlbumCommand;
 use TravelBlog\Entity\Album;
 use TravelBlog\Entity\Image;
 use TravelBlog\View\Upload\Form;
-use Yaoi\Command;
+use Yaoi\Command\Command;
+use Yaoi\Command\Option;
 use Yaoi\Command\Definition;
 use Yaoi\Io\Content\Rows;
 use Yaoi\Rows\Processor;
@@ -17,7 +18,7 @@ class Details extends Command
 
     static function setUpDefinition(Definition $definition, $options)
     {
-        $options->albumId = Command\Option::create()
+        $options->albumId = Option::create()
             ->setIsRequired()
             ->setType();
     }

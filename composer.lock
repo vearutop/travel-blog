@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8fac9a130a81c5e655fc3d3e64c7c497",
-    "content-hash": "84a357686b3c0c649fab1f67c587b872",
+    "hash": "f885104a8a85846f8950c29dbe9f6988",
+    "content-hash": "eb2e6f1a837f961af06b9aa67cccdbe9",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -50,6 +50,49 @@
                 "transliterator"
             ],
             "time": "2016-03-01 09:37:21"
+        },
+        {
+            "name": "php-yaoi/command",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:vearutop/yaoi-command.git",
+                "reference": "0a4fbc8ce70a657a84a3dfd1016d94ba23811f90"
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "php-yaoi/php-yaoi": "dev-dirty"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yaoi\\Command\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Yaoi\\Command\\Tests\\": "tests/src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Viacheslav Poturaev",
+                    "email": "vearutop@gmail.com",
+                    "homepage": "https://github.com/vearutop"
+                }
+            ],
+            "description": "Action packer for php-yaoi",
+            "homepage": "https://github.com/php-yaoi/command",
+            "keywords": [
+                "framework"
+            ],
+            "time": "2016-04-03 15:00:01"
         },
         {
             "name": "php-yaoi/oauth2",
@@ -1199,6 +1242,7 @@
         "php-yaoi/twbs": 20,
         "php-yaoi/oauth2": 20,
         "php-yaoi/schema": 20,
+        "php-yaoi/command": 20,
         "behat/transliterator": 20
     },
     "prefer-stable": false,

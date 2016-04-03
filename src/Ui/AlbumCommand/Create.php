@@ -6,7 +6,8 @@ namespace TravelBlog\Ui\AlbumCommand;
 use TravelBlog\Auth\AuthService;
 use TravelBlog\Entity\Album;
 use TravelBlog\Router;
-use Yaoi\Command;
+use Yaoi\Command\Command;
+use Yaoi\Command\Option;
 use Yaoi\Command\Definition;
 
 class Create extends Command
@@ -15,7 +16,7 @@ class Create extends Command
 
     static function setUpDefinition(Definition $definition, $options)
     {
-        $options->title = Command\Option::create()->setType()->setIsRequired();
+        $options->title = Option::create()->setType()->setIsRequired();
     }
 
     public function performAction()

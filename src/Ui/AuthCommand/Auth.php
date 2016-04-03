@@ -4,7 +4,7 @@ namespace TravelBlog\Ui\AuthCommand;
 
 
 use TravelBlog\Command\ActionCommand;
-use Yaoi\Command;
+use Yaoi\Command\Option;
 use Yaoi\Command\Definition;
 use Yaoi\Oauth2\Vk\VkAuth;
 
@@ -13,7 +13,7 @@ class Auth extends ActionCommand
 
     static function setUpDefinition(Definition $definition, $options)
     {
-        $options->action = Command\Option::create()
+        $options->action = Option::create()
             ->setIsUnnamed()
             ->setIsRequired()
             ->addToEnum(SignIn::definition())

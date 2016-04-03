@@ -8,7 +8,7 @@ use TravelBlog\Entity\UserIdentity;
 use TravelBlog\Router;
 use TravelBlog\Ui\AlbumCommand\AlbumCommand;
 use TravelBlog\View\Auth\LoginForm;
-use Yaoi\Command;
+use Yaoi\Command\Command;
 use Yaoi\Command\Definition;
 use Yaoi\Io\Content\Heading;
 

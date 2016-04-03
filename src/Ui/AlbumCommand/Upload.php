@@ -6,11 +6,10 @@ namespace TravelBlog\Ui\AlbumCommand;
 use TravelBlog\Auth\AuthService;
 use TravelBlog\Entity\Album;
 use TravelBlog\Entity\Image;
-use TravelBlog\FileStorage\Exception;
 use TravelBlog\FileStorage\FileStorage;
-use TravelBlog\Ui\UploadController;
-use Yaoi\Command;
+use Yaoi\Command\Command;
 use Yaoi\Command\Definition;
+use Yaoi\Command\Option;
 
 class Upload extends Command
 {
@@ -18,7 +17,7 @@ class Upload extends Command
 
     static function setUpDefinition(Definition $definition, $options)
     {
-        $options->albumId = Command\Option::create()
+        $options->albumId = Option::create()
             ->setIsRequired()
             ->setType();
     }

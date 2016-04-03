@@ -2,7 +2,7 @@
 
 namespace TravelBlog\Command;
 
-use Yaoi\Command;
+use Yaoi\Command\Command;
 
 abstract class ActionCommand extends Command
 {
