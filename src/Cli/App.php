@@ -5,7 +5,7 @@ namespace TravelBlog\Cli;
 
 use TravelBlog\Command\MigrateCommand;
 use TravelBlog\Command\SetupCommand;
-use Yaoi\Command\Application;
+use Yaoi\Cli\Application;
 use Yaoi\Command\Definition;
 
 class App extends Application

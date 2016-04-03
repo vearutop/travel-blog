@@ -100,7 +100,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/yaoi-oauth2.git",
-                "reference": "404540002e93160b8b40b00b5f81fe1b74968904"
+                "reference": "4c97f4e87c068073742046e390e8487660fa6049"
             },
             "require": {
                 "php": ">=5.3.0",
@@ -137,7 +137,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-04-03 09:26:48"
+            "time": "2016-04-03 15:14:57"
         },
         {
             "name": "php-yaoi/php-yaoi",
@@ -145,15 +145,15 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/php-yaoi.git",
-                "reference": "b69012759ac58a2f3676e5e54d449eac8dfb2e3a"
+                "reference": "a33b8c8b17a8ed46605ad8c8b954556b74f959b5"
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "php-yaoi/command": "dev-master"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
-                "phpunit/phpunit": "~4.0",
-                "psr/log": "~1.0"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "extra": {
@@ -186,7 +186,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-04-03 09:28:11"
+            "time": "2016-04-03 15:14:57"
         },
         {
             "name": "php-yaoi/schema",
@@ -194,7 +194,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/schema.git",
-                "reference": "9c7f3f69e9870ac170d7b8d08bc84dc64312b031"
+                "reference": "d00c09e3784ff070d63519910254ceb2d92568ba"
             },
             "require": {
                 "php": ">=5.3"
@@ -233,7 +233,7 @@
             "support": {
                 "email": "vearutop@gmail.com"
             },
-            "time": "2016-03-30 11:18:28"
+            "time": "2016-04-03 15:14:57"
         },
         {
             "name": "php-yaoi/twbs",
@@ -241,10 +241,11 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/yaoi-twbs.git",
-                "reference": "fb95ad0a2d3dcc1b189d9fd2346660c40d784c7b"
+                "reference": "bb4cc4293e15a87591177f7592cb48ea402e7d08"
             },
             "require": {
                 "php": ">=5.3.0",
+                "php-yaoi/command": "dev-master",
                 "php-yaoi/php-yaoi": "dev-dirty"
             },
             "require-dev": {
@@ -277,7 +278,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-31 06:51:05"
+            "time": "2016-04-03 15:14:57"
         }
     ],
     "packages-dev": [
