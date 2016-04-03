@@ -57,7 +57,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/yaoi-oauth2.git",
-                "reference": "ba4ca4b415a28b409d8bd4ccb30a486e6f854443"
+                "reference": "404540002e93160b8b40b00b5f81fe1b74968904"
             },
             "require": {
                 "php": ">=5.3.0",
@@ -94,7 +94,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-31 06:50:00"
+            "time": "2016-04-03 09:26:48"
         },
         {
             "name": "php-yaoi/php-yaoi",
@@ -102,7 +102,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/php-yaoi.git",
-                "reference": "0ae21d7db2d606b5d4064a48cfaeb91c660daa09"
+                "reference": "b69012759ac58a2f3676e5e54d449eac8dfb2e3a"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -143,7 +143,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-30 11:18:48"
+            "time": "2016-04-03 09:28:11"
         },
         {
             "name": "php-yaoi/schema",
