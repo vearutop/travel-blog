@@ -13,6 +13,11 @@ class User extends Entity
     public $lastName;
     public $avatar;
     public $urlName;
+    public $gender;
+
+    const GENDER_FEMALE = 1;
+    const GENDER_MALE = 2;
+
 
     static function setUpColumns($columns)
     {
@@ -21,6 +26,7 @@ class User extends Entity
         $columns->lastName = Column::STRING;
         $columns->urlName = Column::STRING;
         $columns->avatar = Column::STRING;
+        $columns->gender = Column::INTEGER + Column::NOT_NULL;
     }
 
     static function setUpTable(\Yaoi\Database\Definition\Table $table, $columns)

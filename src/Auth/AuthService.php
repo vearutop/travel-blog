@@ -20,6 +20,12 @@ class AuthService extends Service
         $session = new Session();
         $session->identityId = $identity->id;
 
+        $users = $this->getUsersByIdentityId($identity->id);
+        if (!$users) { // inactive identity
+            $identity->delete();
+            throw new Exception('Identity without users found, deleted', Exception::IDENTITY_WITHOUT_USERS);
+        }
+
         if (isset($_COOKIE[$this->settings->sessionName])) {
             Session::statement()->delete()->where(
                 '? = ?',
@@ -91,12 +97,19 @@ class AuthService extends Service
             return $this->users;
         }
 
-        $this->users = User::statement()->innerJoin('? ON ? = ? AND ? = ?',
-            UserIdentity::table(),
-            UserIdentity::columns()->userId, User::columns()->id,
-            UserIdentity::columns()->identityId, $this->identityId)->query()->fetchAll();
+        $this->users = $this->getUsersByIdentityId($this->identityId);
 
         return $this->users;
+    }
+
+    public function getUsersByIdentityId($identityId)
+    {
+        $users = User::statement()->innerJoin('? ON ? = ? AND ? = ?',
+            UserIdentity::table(),
+            UserIdentity::columns()->userId, User::columns()->id,
+            UserIdentity::columns()->identityId, $identityId)->query()->fetchAll();
+
+        return $users;
     }
 
     /**

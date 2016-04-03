@@ -2,20 +2,10 @@
 
 namespace TravelBlog\Command;
 
-use TravelBlog\Entity\Album;
-use TravelBlog\Entity\ExifTag;
-use TravelBlog\Entity\Identity;
-use TravelBlog\Entity\IdentityProvider;
-use TravelBlog\Entity\Image;
-use TravelBlog\Entity\ImageExif;
-use TravelBlog\Entity\Session;
-use TravelBlog\Entity\User;
-use TravelBlog\Entity\UserIdentity;
 use Yaoi\Command\Definition;
 use Yaoi\Command\Option;
-use Yaoi\Database\Definition\Table;
+use Yaoi\Database;
 use Yaoi\Log;
-use Yaoi\Migration\Manager;
 
 class MigrateCommand extends \Yaoi\Command
 {
@@ -36,20 +26,10 @@ class MigrateCommand extends \Yaoi\Command
 
     public function performAction()
     {
-        /** @var Table[] $tables */
-        $tables = array(
-            Identity::table(),
-            IdentityProvider::table(),
-            Session::table(),
-            User::table(),
-            UserIdentity::table(),
+        $database = Database::getInstance();
+        $settings = $database->getSettings();
 
-            Album::table(),
-            ExifTag::table(),
-            Image::table(),
-            ImageExif::table(),
-        );
-
+        $tables = $settings->getTables();
         $log = new Log('colored-stdout');
 
         if ($this->wipe) {

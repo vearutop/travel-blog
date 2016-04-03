@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4d91342dd5b85ff8d395cb6c366126fe",
-    "content-hash": "b3cd2885a01cf9ae0cae61db4733eba5",
+    "hash": "8fac9a130a81c5e655fc3d3e64c7c497",
+    "content-hash": "84a357686b3c0c649fab1f67c587b872",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -52,12 +52,57 @@
             "time": "2016-03-01 09:37:21"
         },
         {
+            "name": "php-yaoi/oauth2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:vearutop/yaoi-oauth2.git",
+                "reference": "ba4ca4b415a28b409d8bd4ccb30a486e6f854443"
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "php-yaoi/php-yaoi": "dev-dirty"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "php-yaoi/twbs": "dev-master",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yaoi\\Oauth2\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Yaoi\\Oauth2\\Tests\\": "tests/src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Viacheslav Poturaev",
+                    "email": "vearutop@gmail.com",
+                    "homepage": "https://github.com/vearutop"
+                }
+            ],
+            "description": "Twitter Bootstrap bindings for php-yaoi",
+            "homepage": "https://github.com/php-yaoi/ouath2",
+            "keywords": [
+                "framework"
+            ],
+            "time": "2016-03-31 06:50:00"
+        },
+        {
             "name": "php-yaoi/php-yaoi",
             "version": "dev-dirty",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/php-yaoi.git",
-                "reference": "76dc8582b174530cba597783d2c2aa731d94437c"
+                "reference": "0ae21d7db2d606b5d4064a48cfaeb91c660daa09"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -98,7 +143,54 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-28 11:23:16"
+            "time": "2016-03-30 11:18:48"
+        },
+        {
+            "name": "php-yaoi/schema",
+            "version": "dev-master-bb",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:vearutop/schema.git",
+                "reference": "9c7f3f69e9870ac170d7b8d08bc84dc64312b031"
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "ext-xdebug": ">=2.2.1",
+                "phpunit/php-code-coverage": "^2.2.4",
+                "phpunit/phpunit": "^4.8.23"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yaoi\\Schema\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Yaoi\\Schema\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "php -dxdebug.coverage_enable=1 ./vendor/bin/phpunit --coverage-text"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Viacheslav Poturaev",
+                    "email": "vearutop@gmail.com"
+                }
+            ],
+            "description": "PHP Schema",
+            "support": {
+                "email": "vearutop@gmail.com"
+            },
+            "time": "2016-03-30 11:18:28"
         },
         {
             "name": "php-yaoi/twbs",
@@ -106,7 +198,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/yaoi-twbs.git",
-                "reference": "f588c689f8600293db71c39bb1172a30f60927d2"
+                "reference": "fb95ad0a2d3dcc1b189d9fd2346660c40d784c7b"
             },
             "require": {
                 "php": ">=5.3.0",
@@ -142,7 +234,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-28 10:11:19"
+            "time": "2016-03-31 06:51:05"
         }
     ],
     "packages-dev": [
@@ -1052,16 +1144,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c"
+                "reference": "0047c8366744a16de7516622c5b7355336afae96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/b5ba64cd67ecd6887f63868fa781ca094bd1377c",
-                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0047c8366744a16de7516622c5b7355336afae96",
+                "reference": "0047c8366744a16de7516622c5b7355336afae96",
                 "shasum": ""
             },
             "require": {
@@ -1097,7 +1189,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-23 15:16:06"
+            "time": "2016-03-04 07:55:57"
         }
     ],
     "aliases": [],
@@ -1105,6 +1197,8 @@
     "stability-flags": {
         "php-yaoi/php-yaoi": 20,
         "php-yaoi/twbs": 20,
+        "php-yaoi/oauth2": 20,
+        "php-yaoi/schema": 20,
         "behat/transliterator": 20
     },
     "prefer-stable": false,

@@ -3,3 +3,4 @@ env/conf.php
 vendor
 data
 public/nginx-error.log
+*.7z

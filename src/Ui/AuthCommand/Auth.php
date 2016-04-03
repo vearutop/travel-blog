@@ -6,6 +6,7 @@ namespace TravelBlog\Ui\AuthCommand;
 use TravelBlog\Command\ActionCommand;
 use Yaoi\Command;
 use Yaoi\Command\Definition;
+use Yaoi\Oauth2\Vk\VkAuth;
 
 class Auth extends ActionCommand
 {
@@ -19,6 +20,7 @@ class Auth extends ActionCommand
             ->addToEnum(SignOut::definition())
             ->addToEnum(Register::definition())
             ->addToEnum(RegisterReceive::definition())
+            ->addToEnum(VkAuth::definition(), 'vk')
         ;
     }
 

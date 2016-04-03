@@ -2,6 +2,8 @@
     "require": {
         "php-yaoi/php-yaoi": "dev-dirty",
         "php-yaoi/twbs": "dev-master",
+        "php-yaoi/oauth2": "dev-master",
+        "php-yaoi/schema": "dev-master-bb",
         "behat/transliterator": "dev-master"
     },
     "autoload": {
@@ -9,6 +11,9 @@
             "TravelBlog\\": "src/",
             "TravelBlog\\Tests\\": "tests/src/"
         }
+    },
+    "config": {
+        "prefer-dist": true
     },
     "require-dev": {
         "phpunit/phpunit": "^4.0"
@@ -20,6 +25,14 @@
         },
         {
             "url": "git@bitbucket.org:vearutop/php-yaoi.git",
+            "type": "git"
+        },
+        {
+            "url": "git@bitbucket.org:vearutop/yaoi-oauth2.git",
+            "type": "git"
+        },
+        {
+            "url": "git@bitbucket.org:vearutop/schema.git",
             "type": "git"
         },
         {
