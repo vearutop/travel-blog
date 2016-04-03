@@ -6,6 +6,7 @@ use Yaoi\Command\Definition;
 use Yaoi\Command\Option;
 use Yaoi\Database;
 use Yaoi\Log;
+use Yaoi\Schema\Primitives\EnumStructure;
 
 class MigrateCommand extends \Yaoi\Command\Command
 {
@@ -18,7 +19,7 @@ class MigrateCommand extends \Yaoi\Command\Command
     {
         $options->dryRun = Option::create()->setDescription('Read-only mode to check current status');
         $options->continueAfterFail = Option::create()->setDescription('Do not stop migrations after failure');
-        $options->verbose = Option::create()->setDescription('More output')->setEnum(0, 1, 2);
+        $options->verbose = Option::create(EnumStructure::create()->setEnum(0, 1, 2))->setDescription('More output');
         $options->wipe = Option::create()->setDescription('Drop and create tables');
 
         $definition->description = 'Migrate environment to comply application code';

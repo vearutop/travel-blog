@@ -18,11 +18,13 @@ class Application extends ActionCommand
     {
         $definition->title = 'Traveler\'s blog';
 
-        $options->action = Command\Option::create()
+        $options->action = Command\Option::create(
+            Command\EnumActions::create()
+                ->addToEnum(Index::definition(), '')
+                ->addToEnum(AlbumCommand::definition(), 'album')
+                ->addToEnum(Auth::definition())
+        )
             ->setIsUnnamed()
-            ->addToEnum(Index::definition(), '')
-            ->addToEnum(AlbumCommand::definition(), 'album')
-            ->addToEnum(Auth::definition())
             ->setDescription('Application action');
     }
 
@@ -33,7 +35,7 @@ class Application extends ActionCommand
             $this->response->addContent(new Anchor('Sign out', $this->io->makeAnchor(SignOut::createState())));
         }
         //else {
-            $this->response->addContent(new Anchor('vk auth', $this->io->makeAnchor(VkAuth::createState())));
+        $this->response->addContent(new Anchor('vk auth', $this->io->makeAnchor(VkAuth::createState())));
         //}
         if (null === $this->action) {
             $this->response->error("Page not found");

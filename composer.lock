@@ -57,11 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/yaoi-command.git",
-                "reference": "0a4fbc8ce70a657a84a3dfd1016d94ba23811f90"
+                "reference": "f988ff9218865877259a07f0199b6c541c96cf93"
             },
             "require": {
-                "php": ">=5.3.0",
-                "php-yaoi/php-yaoi": "dev-dirty"
+                "php": ">=5.4.0",
+                "php-yaoi/php-yaoi": "dev-dirty",
+                "php-yaoi/schema": "dev-master-bb"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -74,7 +75,7 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Yaoi\\Command\\Tests\\": "tests/src/"
+                    "Yaoi\\Command\\Tests\\": "tests/"
                 }
             },
             "license": [
@@ -92,7 +93,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-04-03 15:00:01"
+            "time": "2016-04-03 18:05:52"
         },
         {
             "name": "php-yaoi/oauth2",
@@ -145,7 +146,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/php-yaoi.git",
-                "reference": "a33b8c8b17a8ed46605ad8c8b954556b74f959b5"
+                "reference": "ce6029d9d7e2632ab83bcc80b560b958edde9527"
             },
             "require": {
                 "php": ">=5.3.0",
@@ -186,7 +187,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-04-03 15:14:57"
+            "time": "2016-04-03 18:05:53"
         },
         {
             "name": "php-yaoi/schema",
@@ -194,7 +195,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:vearutop/schema.git",
-                "reference": "d00c09e3784ff070d63519910254ceb2d92568ba"
+                "reference": "92679a4a6653cc024d4c2dc9cc3f48f04137e3fe"
             },
             "require": {
                 "php": ">=5.3"
@@ -233,7 +234,7 @@
             "support": {
                 "email": "vearutop@gmail.com"
             },
-            "time": "2016-04-03 15:14:57"
+            "time": "2016-04-03 18:05:53"
         },
         {
             "name": "php-yaoi/twbs",
